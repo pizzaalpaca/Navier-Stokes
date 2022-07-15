@@ -1,0 +1,28 @@
+import numpy as np 
+from matplotlib import pyplot 
+%matplotlib inline
+
+domain = np.linspace(0., 2., num = 51) # Graphic domain 
+nsteps = 100 # time steps number 
+tsteps = .025 c = 1 # Wave velocity 
+nx = x.size # Number of points to the iteration 
+dx = x[1] - x[0] # Differenciation
+
+Now we define the initial conditions of the problem
+u = numpy.ones_like(x) 
+u[(1,03<=x) & (x<=1.53)] = 2 
+
+Where un is the u value on the iterations
+un = numpy.ones_like(u)
+
+for n in range(nt): 
+  un = u.copy() 
+  for i in range(1, nx): 
+    u[i] = un[i] - un[1] * dt / dx * (un[i] - un[i-1])
+
+#Plotting the space x velocity chart
+pyplot.plot(x, u):
+
+#OBS: A principal diferença entre a equação linear e a não linear, neste caso, é que ao invés de utilizarmos a velocidade "c" como parâmetro, utilizamos a própria solução da equação "u".
+# du(x,t)/dt + c*du(x,t)/dx = 0 é a equação linear;
+# du/dt + u*du/dx = 0 é a equação não linear;
